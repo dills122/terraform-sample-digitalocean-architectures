@@ -12,30 +12,3 @@ output "web_loadbalancer_fqdn" {
 output "bastion_fqdn" {
     value = digitalocean_record.bastion.fqdn
 }
-
-# The port the postgres database is listening on
-output "database_port" {
-    value = digitalocean_database_cluster.postgres-cluster.port
-}
-
-# The URI for connecting to the database
-output "database_private_uri" {
-    value = digitalocean_database_cluster.postgres-cluster.private_uri
-    sensitive = true
-}
-
-# The name of the default database
-output "database_name" {
-    value = digitalocean_database_cluster.postgres-cluster.database
-}
-
-# The name of the default user
-output "database_user" {
-    value = digitalocean_database_cluster.postgres-cluster.user
-}
-
-# The default user password
-output "database_password" {
-    value = digitalocean_database_cluster.postgres-cluster.password
-    sensitive = true
-}

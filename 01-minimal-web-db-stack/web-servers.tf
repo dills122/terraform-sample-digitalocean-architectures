@@ -66,7 +66,7 @@ resource "digitalocean_certificate" "web" {
     type = "lets_encrypt"
 
     # The fqdn to get the certificate for
-    domains = ["${var.subdomain}.${data.digitalocean_domain.web.name}"]
+    domains = ["${var.subdomain}.${data.digitalocean_domain.web.name}", data.digitalocean_domain.web.name, "www.${data.digitalocean_domain.web.name}"]
 
     # Ensure we create a new certificate successfully before deleting the old
     # one
